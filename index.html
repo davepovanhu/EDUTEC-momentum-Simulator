@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EDUTEC Collision Simulator</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/block.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/Quiz.js"></script> <!-- For quiz functionality -->
+</head>
+<body>
+ <!-- Introductory Modal -->
+ <div id="intro-modal" class="intro-modal">
+    <div class="intro-content">
+        <h2>About Momentum</h2>
+        <p>
+            Momentum = Mass × Velocity. Mass is measured in (kg), and velocity is measured in meters per second (m/s). The SI unit for momentum is kg • m/s. Therefore, the greater an object's mass or the greater its velocity, the greater its momentum.
+        </p>
+        <button onclick="startSimulation()">Start Simulation</button>
+    </div>
+</div>                                
+
+    <main>
+        <!-- Simulation Area -->
+        <div class="simulation-container">
+            <div id="root"></div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2>Simulation Controls</h2>
+            <div class="input-group">
+                <label for="vel">Velocity:</label>
+                <input id="vel" type="text" placeholder="Velocity" />
+            </div>
+            <div class="input-group">
+                <label for="m1">Mass of Block 1:</label>
+                <input id="m1" type="text" placeholder="Mass of Block 1" />
+            </div>
+            <div class="input-group">
+                <label for="m2">Mass of Block 2:</label>
+                <input id="m2" type="text" placeholder="Mass of Block 2" />
+            </div>
+            <div class="input-group">
+                <label for="Timestamps">Timestamps:</label>
+                <input id="Timestamps" type="text" placeholder="Timestamps" />
+            </div>
+            <div class="button-group">
+                <button onclick="startSimulation()">Start Simulation</button>
+                <button onclick="resetSimulation()">Reset Simulation</button>
+                <button onclick="stopSimulation()">Stop Simulation</button>
+            </div>
+        </div>
+
+        <!-- Data Display -->
+        <aside class="side-data">
+            <h2>Real Time</h2>
+            <p id="count">Collisions: 0</p>
+            <p id="velofb1">Velocity of Block 1: 0 | Mass: 0</p>
+            <p id="velofb2">Velocity of Block 2: 0 | Mass: 0</p>
+        </aside>
+    </main>
+
+    <div id="quiz-section" class="quiz-section">
+        <button id="quiz-button">Take the Quiz</button>
+        <div id="quiz-container" class="quiz-container" style="display: none;">
+            <!-- Quiz questions will be inserted here by JavaScript -->
+            <div id="quiz-container" class="quiz-container"></div>
+            <div id="quiz-feedback" style="display: none;"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="logo-container">
+            <img src="image/Artboard 6 copy 3.png" alt="Edutec Logo" class="logo" />
+        </div>
+    </footer>
+</body>
+</html>
